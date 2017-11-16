@@ -1,0 +1,120 @@
+/*
+* Style
+*/
+
+
+/*
+* Google font
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Roboto");
+
+
+/*
+* Section - Home
+*/
+
+/** BG Image */
+
+#home {
+    background-image: url("../images/home/home1.png");
+}
+
+/** BG Parallax */
+
+#home-bg-parallax > .bg-parallax {
+    background: url("../images/bg-parallax.jpg");
+}
+
+/** BG Slider */
+
+#home-bg-slider .flickity-slider > .carousel-cell:nth-child(1) {
+    background: url("../images/bg-home-1.jpg");
+}
+#home-bg-slider .flickity-slider > .carousel-cell:nth-child(2) {
+    background: url("../images/bg-home-2.jpg");
+}
+#home-bg-slider .flickity-slider > .carousel-cell:nth-child(3) {
+    background: url("../images/bg-home-3.jpg");
+}
+
+/** BG Video */
+
+#home-bg-video .player:before {
+    z-index: 15;
+}
+#home-bg-video .player.is-mobile {
+    display: none;
+}
+#home-bg-video .container {
+    position: relative;
+    z-index: 20;
+}
+
+
+/*
+* Section - Benefits
+*/
+
+#benefits {
+    background-image: url("../images/bg-benefits.jpg");
+}
+
+
+/*
+* Section - Milestones
+*/
+
+#milestones {
+    background-image: url("../images/background/bg-random.png");
+}
+
+
+/*
+* Section - Pricing
+*/
+
+#pricing {
+    background-image: url("../images/background/bg-lasalle-1.png");
+}
+
+
+/*
+* Footer
+*/
+
+.footer-logo {
+    max-height: 40px;
+}
+.footer-icon-social {
+    bottom: 10px;
+    position: relative;
+}
+
+#tblNT{
+    display: inline-table !important;
+}
+
+.text-center{
+    text-align: center;
+}
+
+#lasalle{
+    padding-bottom: 70px !important;
+}
+
+#courscollectifs{
+    padding-top: 70px !important;   
+}
+.closeOffer{
+    position: absolute;
+    top: 14px;
+    left: 18px;
+}
+
+.modal-content-offer{
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    position: relative;
+}

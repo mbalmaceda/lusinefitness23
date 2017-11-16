@@ -1,0 +1,99 @@
+/*
+* Color
+*/
+
+
+/*
+* Background color
+*/
+
+.bg-base-color {
+    background-color: #7E7E7E !important;
+}
+
+
+/*
+* Border color
+*/
+
+.border-base-color {
+    border-color: #7E7E7E !important;
+}
+
+
+/*
+* Button color
+*/
+
+.btn-base-color {
+    background-color: #7E7E7E !important;
+}
+
+
+/*
+* Button color - hover
+*/
+
+.btn-hover-base-color:hover {
+    background-color: #7E7E7E !important;
+}
+
+
+/*
+* Flickity
+*/
+
+.carousel-custom .flickity-page-dots .dot.is-selected {
+    background: #7E7E7E;
+}
+
+
+/*
+* Heading style
+*/
+
+.title-underline-base-color {
+    border-color: #7E7E7E;
+}
+.title-underline-thick-base-color {
+    border-color: #7E7E7E;
+}
+.title-sideline-base-color:before {
+    background-color: #7E7E7E;
+}
+
+
+/*
+* Preloader
+*/
+
+.pace .pace-progress {
+    background-color: #7E7E7E;
+}
+
+
+/*
+* Text color
+*/
+
+.text-base-color {
+    color: #7E7E7E !important;
+}
+
+
+/*
+* Triangle
+*/
+
+.triangle-top-right.triangle-base-color {
+    border-color: transparent #7E7E7E transparent transparent;
+}
+.triangle-top-left.triangle-base-color {
+    border-color: #7E7E7E transparent transparent transparent;
+}
+.triangle-bottom-right.triangle-base-color {
+    border-color: transparent transparent #7E7E7E transparent;
+}
+.triangle-bottom-left.triangle-base-color {
+    border-color: transparent transparent transparent #7E7E7E;
+}
