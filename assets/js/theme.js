@@ -106,7 +106,7 @@
             }
         });
         
-        $('#modalOffer').modal('show');
+        //$('#modalOffer').modal('show');
         
         /** Page scroll */ 
         $pageScrollLink.on('click', function(e){
