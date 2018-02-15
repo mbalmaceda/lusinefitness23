@@ -2,7 +2,7 @@
 
 (function($){
     "use strict";
-    
+
     var $document = $(document),
         $window = $(window),
         $htmlBody = $('html, body'),
@@ -14,7 +14,7 @@
         $galleryGrid = $('.gallery-grid'),
         navHeight = 80,
         navHeightShrink = 60;
-      
+
     /** Detect mobile device */
     var isMobile = {
         Android: function(){
@@ -36,99 +36,99 @@
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-    
-    
+
+
     /*
     * Window load
     */
-   
+
     $window.on('load', function(){
-        
+
         /** Bootstrap scrollspy */
         var ww = Math.max($window.width(), window.innerWidth);
-        $body.scrollspy({    
+        $body.scrollspy({
             target: '#navigation',
             offset: ww > 992 ? navHeightShrink : navHeight
         });
     });
-    
-    
+
+
     /*
     * Document ready
     */
-   
+
     $document.ready(function(){
         /*
         * Window scroll
         */
-       
+
         $window.on('scroll', function(){
-        
-            
+
+
             if ($document.scrollTop() > navHeight){
-                
+
                 /** Shrink navigation */
                 $navbar.addClass('shrink');
-                
+
                 /** Scroll to top */
                 $scrollToTop.fadeIn();
             }
             else{
-                
+
                 /** Shrink navigation */
                 $navbar.removeClass('shrink');
-                
+
                 /** Scroll to top */
                 $scrollToTop.fadeOut();
             }
         });
-        
-        
+
+
         /*
         * Window resize
         */
-       
+
         $window.resize(function() {
-            
+
             /** Bootstrap scrollspy */
             var dataScrollSpy = $body.data('bs.scrollspy'),
                 ww = Math.max($window.width(), window.innerWidth),
                 offset = ww > 992 ? navHeightShrink : navHeight;
-        
+
             dataScrollSpy._config.offset = offset;
             $body.data('bs.scrollspy', dataScrollSpy);
             $body.scrollspy('refresh');
-            
-            
+
+
             /** Gallery grid */
             if ($.fn.isotope){
                 $galleryGrid.isotope('layout');
             }
         });
-        
-        //$('#modalOffer').modal('show');
-        
-        /** Page scroll */ 
+
+        $('#modalOffer').modal('show');
+
+        /** Page scroll */
         $pageScrollLink.on('click', function(e){
             var anchor = $(this),
                 target = anchor.attr('href');
             pageScroll(target);
             e.preventDefault();
         });
-        
+
         function pageScroll(target){
             var ww = Math.max($window.width(), window.innerWidth),
                     offset = ww > 992 ? navHeightShrink : navHeight;
-            
+
             $htmlBody.stop().animate({
                 scrollTop: $(target).offset().top - (offset - 1)
             }, 1000, 'easeInOutExpo');
-            
+
             // Automatically retract the navigation after clicking on one of the menu items.
             $navbarCollapse.collapse('hide');
         };
-        
-        
+
+
         /** Counter number */
         if ($.fn.countTo){
             var $timer = $('.timer');
@@ -138,26 +138,26 @@
                 }
             });
         }
-        
-        
+
+
         /** Carousel Custom - Init */
         if ($.fn.flickity){
-            
+
             /** Section - Our Latest Work */
             var $carouselWork = $('#carousel-work');
             carouselCustom($carouselWork);
-            
+
             /** Section - Reviews */
             var $carouselReviews = $('#carousel-reviews');
             carouselCustom($carouselReviews);
         }
-        
+
         /** Carousel Custom */
         function carouselCustom($elem){
             var $carouselControl = $elem.closest('.carousel-custom-wrap').find('.carousel-custom-control'),
                 $btnPrev = $carouselControl.find('.control-previous'),
                 $btnNext = $carouselControl.find('.control-next');
-                
+
             $elem.flickity({
                 cellSelector: '.carousel-cell',
                 cellAlign: 'left',
@@ -169,24 +169,24 @@
                 imagesLoaded: true,
                 pauseAutoPlayOnHover: false
             });
-            
+
             var flkty = $elem.data('flickity');
-            $elem.find('.flickity-page-dots').on('mouseleave', function(){ 
-                flkty.playPlayer(); 
+            $elem.find('.flickity-page-dots').on('mouseleave', function(){
+                flkty.playPlayer();
             });
-            
+
             $btnPrev.on('click', function(e){
                 $elem.flickity('previous', true);
                 e.preventDefault();
             });
-            
+
             $btnNext.on('click', function(e){
                 $elem.flickity('next', true);
                 e.preventDefault();
             });
         }
-        
-        
+
+
         /** Gallery */
         if ($.fn.imagesLoaded && $.fn.isotope){
             $galleryGrid.imagesLoaded(function(){
@@ -196,8 +196,8 @@
                 });
             });
         }
-        
-        
+
+
         /** Gallery - Magnific popup */
         if ($.fn.magnificPopup){
             $galleryGrid.magnificPopup({
@@ -213,10 +213,10 @@
                     tCounter: '<span class="mfp-counter-curr">%curr%</span> of <span class="mfp-counter-total">%total%</span>'
                 }
             });
-            
+
             var $popupTrigger = $('.popup-trigger'),
                 $popupTriggerClose = $('.popup-trigger-close');
-        
+
             $popupTrigger.on('click', function(e){
                 $.magnificPopup.open({
                     items: {
@@ -234,38 +234,38 @@
                         }
                     }
                 });
-                
+
                 e.preventDefault();
             });
-            
+
             $popupTriggerClose.on('click', function(e){
                 $.magnificPopup.close();
                 e.preventDefault();
             });
         }
-        
-        
+
+
         /** BG Parallax */
         if (typeof ScrollMagic !== 'undefined'){
             var selector = '#home-bg-parallax';
-            
+
             // Init controller
             var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: 'onEnter', duration: '200%'}});
-        
+
             // Build scenes
             new ScrollMagic.Scene({triggerElement: selector})
                     .setTween(selector + ' > .bg-parallax', {y: '80%', ease: Linear.easeNone})
                     .addTo(controller);
         }
-        
-        
+
+
         /** BG Slider */
         if ($.fn.flickity){
             var $carouselBgSlider = $('#home-bg-slider').find('.carousel-custom');
             carouselCustom($carouselBgSlider);
         }
-        
-        
+
+
         /** BG Video - Vimeo */
         if ($.fn.vimeo_player){
             var $bgndVideo = $('#bgndVideoVimeo');
@@ -286,8 +286,8 @@
                 $bgndVideo.parent().css('background-image', 'url("' + $bgndVideo.data('video-poster') + '")');
             }
         }
-        
-        
+
+
         /** BG Video - YouTube */
         if ($.fn.YTPlayer){
             var $bgndVideo = $('#bgndVideoYouTube');
@@ -308,12 +308,12 @@
                 $bgndVideo.parent().css('background-image', 'url("' + $bgndVideo.data('video-poster') + '")');
             }
         }
-        
-            
+
+
         /** Contact form */
         var $contactForm = $('#form-contact'),
             $btnContactForm = $('#btn-form-contact');
-        
+
         $btnContactForm.on('click', function(e){
             $contactForm.validate();
             if ($contactForm.valid()){
@@ -321,16 +321,16 @@
             }
             e.preventDefault();
         });
-        
+
         // Send mail
         function send_mail($form, $btnForm){
             var defaultMessage = $btnForm.html(),
                 sendingMessage = 'Chargement...',
                 errorMessage = 'Envoi d\'erreur!',
                 okMessage = 'Email envoyé!';
-            
+
             $btnForm.html(sendingMessage);
-            
+
             $.ajax({
                 url: $form.attr('action'),
                 type: 'post',
