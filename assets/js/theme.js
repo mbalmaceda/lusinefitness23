@@ -95,6 +95,17 @@
                 ww = Math.max($window.width(), window.innerWidth),
                 offset = ww > 992 ? navHeightShrink : navHeight;
 
+            //Retomar
+            /*console.log(ww);
+            var widthLogo = (ww-1200);
+            
+            if (ww > 1200) {
+                $('#logo-home').show();
+                $('#logo-home').css('width', widthLogo);
+            } else {
+                $('#logo-home').hide();
+            }*/
+
             dataScrollSpy._config.offset = offset;
             $body.data('bs.scrollspy', dataScrollSpy);
             $body.scrollspy('refresh');
@@ -106,7 +117,7 @@
             }
         });
 
-        $('#modalOffer').modal('show');
+        //$('#modalOffer').modal('show');
 
         /** Page scroll */
         $pageScrollLink.on('click', function(e){
