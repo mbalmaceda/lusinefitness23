@@ -2475,6 +2475,7 @@ section {
         border-top: 1px solid rgba(255, 255, 255, 0.15);
         padding-bottom: 12px;
         padding-top: 8px;
+        text-align: center;
     }
 }
 @media (min-width: 992px) {
