@@ -82,7 +82,9 @@
 /*
 * Footer
 */
-
+#contact {
+    background-image: url("../images/bg-contact.jpg");
+}
 .footer-logo {
     max-height: 40px;
 }
