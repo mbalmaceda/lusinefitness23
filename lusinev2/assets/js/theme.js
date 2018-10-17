@@ -61,12 +61,65 @@
     $document.ready(function(){
         /*Incializacion de wow */
         new WOW().init();
+
+        $('[data-spy="scroll"]').on('activate.bs.scrollspy', function (e) {
+            //console.log($(this));
+        });
+
+        $(function() {
+          $("#list-example a[href^='#']").click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) { 
+                //$(target).scrollTop();
+                console.log(target.get(0).id);
+                console.log(target.position().top);
+                $('#smooth-scroll').stop().animate({
+                  scrollTop: target.position().top
+                  //scrollTop: target.offset().top - $(this).scrollTop()
+                }, 1000);
+                return false;
+              }
+            }
+          });
+        });
+        /*$("#list-example a[href^='#']").click(function(e) {
+            //e.preventDefault();
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+            if (target.length) {
+                $('#smooth-scroll').animate({
+                    scrollTop: target.offset().top
+                }, 1000, 'easeInOutExpo');
+                return false;
+            }
+        });  */ 
+
+        /*$("#list-example a[href^='#']").on('click', function(e) {
+            // prevent default anchor click behavior
+            e.preventDefault();
+            // store hash
+           // animate
+           var hash = $(this.hash);
+            $('#smooth-scroll').animate({
+               scrollTop: $(hash).offset().top
+             }, 1000, function(){
+
+               // when done, add hash to url
+               // (default click behaviour)
+               window.location.hash = hash;
+             });
+            var ww = Math.max($window.width(), window.innerWidth),
+                offset = ww > 992 ? navHeightShrink : navHeight;
+        });
+
         /*
         * Window scroll
         */
        
         $window.on('scroll', function(){
-        
+            
             
             if ($document.scrollTop() > navHeight){
                 
@@ -347,9 +400,9 @@
         // Send mail
         function send_mail($form, $btnForm){
             var defaultMessage = $btnForm.html(),
-                sendingMessage = 'Loading...',
-                errorMessage = 'Error Sending!',
-                okMessage = 'Email Sent!';
+                sendingMessage = 'Chargement...',
+                errorMessage = 'Envoi d\'erreur!',
+                okMessage = 'Email envoyé!';
             
             $btnForm.html(sendingMessage);
             

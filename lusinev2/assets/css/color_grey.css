@@ -10,6 +10,10 @@
     background-color: #7E7E7E !important;
 }
 
+.bg-base-color-2 {
+    background-color: #C52B0A !important;
+}
+
 
 /*
 * Border color
@@ -67,7 +71,17 @@
     border-color: #7E7E7E;
 }
 .title-sideline-base-color:before {
-    background-color: #7E7E7E;
+    background-color: red;
+}
+
+.title-underline-base-color-2 {
+    border-color: red;
+}
+.title-underline-thick-base-color-2 {
+    border-color: red;
+}
+.title-sideline-base-color-2:before {
+    background-color: red;
 }
 
 
@@ -86,6 +100,13 @@
 
 .text-base-color {
     color: #7E7E7E !important;
+}
+
+.list-group-item.active{
+    z-index: 2;
+    color: #fff;
+    background-color: #C52B0A;
+    border-color: #C52B0A;
 }
 
 

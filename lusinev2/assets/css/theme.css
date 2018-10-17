@@ -22,6 +22,10 @@ a[href^=tel] {
     color: inherit;
 }
 
+a[href^=mailto] {
+    color: inherit;
+}
+
 
 /*
 * Background color
@@ -1552,7 +1556,9 @@ label.error {
     bottom: 26px;
     position: relative;
 }
-
+.pricing-chf {
+    position: relative;
+}
 
 /*
 * Scrollbar
@@ -2050,6 +2056,11 @@ section {
         line-height: 64px;
         width: 62px;
     }
+
+    .title-extra-large-4 {
+        font-size: 3.125rem !important;
+        line-height: 3.125rem !important;
+    }
 }
 @media (max-width: 991px) {
     .btn-md-extra-small {
@@ -2101,6 +2112,9 @@ section {
     }
 }
 @media (max-width: 767px) {
+    .display-none-when-sm{
+        display: none
+    }
     .btn-sm-extra-small {
         font-size: 0.625rem;
         padding: 0.625rem 0.75rem 0.5rem;
@@ -2637,7 +2651,7 @@ section {
 * Text size
 */
 
-@media (max-width: 1199px) {
+@media (max-width: 1350px) {
     .text-lg-extra-small {
         font-size: 0.625rem !important;
         line-height: 0.9375rem !important;

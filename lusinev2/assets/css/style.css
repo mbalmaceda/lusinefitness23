@@ -15,7 +15,7 @@
 
 /** BG Image */
 #home {
-    background-image: url("../images/bg-home-1.jpg");
+    background-color: #7E7E7E;
 }
 
 /** BG Parallax */
@@ -28,15 +28,15 @@
     background: url("../images/home/home1.png");
 }
 #home .flickity-slider > .carousel-cell:nth-child(2) {
-    background: url("../images/bg-home-2.jpg");
+    background: url("../images/home/home2.png");
 }
 #home .flickity-slider > .carousel-cell:nth-child(3) {
-    background: url("../images/bg-home-3.jpg");
+    background: url("../images/home/home3.jpg");
 }
 
 /** BG Slideshow */
 #home-bg-slideshow .slides > .bg-cover:nth-child(1) {
-    background: url("../images/bg-home-1.jpg");
+    background-color: #7E7E7E;
 }
 #home-bg-slideshow .slides > .bg-cover:nth-child(2) {
     background: url("../images/bg-home-2.jpg");
@@ -67,7 +67,7 @@
 }
 
 #nosavantages {
-    background-image: url("../images/bg-benefits.jpg");
+    background-image: url("../images/background/bg-nos_avantages.png");
 }
 
 
@@ -88,9 +88,9 @@
     background-image: url("../images/background/bg-lasalle-1.png");
 }
 
-#courscollectifs {
+/*#courscollectifs {
     background-image: url("../images/background/bg-random-2.png");
-}
+}*/
 
 /*
 * Section - Contact
@@ -124,7 +124,7 @@
 }
 
 .lf23{
-    color: red;
+    color: #C52B0A;
 }
 /*
 * Footer
@@ -137,3 +137,17 @@
     bottom: 10px;
     position: relative;
 }
+
+.scrollspy-example{
+    height: 330px;
+    overflow: auto;
+    position: relative;
+}
+.scrollspy-example > div {
+    width: 95%;
+    margin: 5px;
+}
+#tblNT{
+    display: inline-table !important;
+}
+.hola{height: 200px}

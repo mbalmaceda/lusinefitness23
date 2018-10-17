@@ -1,46 +1,65 @@
 <?php
+require 'PHPMailer/PHPMailerAutoload.php';
+require 'PHPMailer/extras/Security.php';
 
-// Replace with your email 
-$mail_to = 'your_email@your_domain.com';
+define('SMTP_HOST', 'asmtp.mail.hostpoint.ch'); // Hostname of the mail server
+define('SMTP_USERNAME', 'no-reply@lusinefitness23.ch'); // Username for SMTP authentication any valid email created in your domain
+define('SMTP_PASSWORD', 'UjskUbaE'); // Password for SMTP authentication
+define('SMTP_PORT', 587); // Port of the SMTP like to be 25, 80, 465 or 587
 
-if (isset($_POST['name']) && isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && isset($_POST['services']) && isset($_POST['message']))
-{
+// To address who will receive this email 
+$to = 'contact@lusinefitness23.ch';
+
+$security = new Security();
+
+// This IF condition is for improving security and Prevent Direct Access to the Mail Script.
+if (isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['message']))
+{    
     // Collect POST data from form
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $services = $_POST['services'];
-    $message = $_POST['message'];
+    $name = $security->xss_clean($_POST['name']);
+    $email = $security->xss_clean($_POST['email']);
+    $services = $security->xss_clean($_POST['subject']);
+    $message = $security->xss_clean($_POST['message']);
     
     // Prefedined Variables  
-    $subject = 'Kania Notification Mailer: Message from ' . $name . '!';
-    
-    // Collecting all content in $content
-    $content = 'Contact Details:' . "\r\n" ;
-    $content .= 'Name: ' . $name . "\r\n" ;
-    $content .= 'Email: ' . $email . "\r\n" ;
-    $content .= 'Services: ' . $services . "\r\n" ;
-    $content .= 'Message: ' . $message . "\r\n" ;
-    
-    // Detect & prevent header injections
-    $test = "/(content-type|bcc:|cc:|to:)/i";
-    foreach ($_POST as $key => $val)
-    {
-        if (preg_match($test, $val))
-        {
-            exit;
+    $set_from = 'Lusine Fitness 23 Notification Mailer';
+    $subject = 'Message de ' . $name . '!';
+
+    // Collecting all content in HTML Table
+    $content = '<table width="100%">
+    <tr><td colspan="2"><strong>Contact Details:</strong></td></tr>
+    <tr><td valign="top">Nom:</td><td>' . $name . '</td></tr>
+    <tr><td valign="top">Email:</td><td>' . $email . '</td></tr>
+    <tr><td valign="top">Sujet:</td><td>' . $services. '</td></tr>
+    <tr><td valign="top">Message:</td><td>' . $message . '</td></tr>
+    </table> ';
+
+    try {
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = SMTP_HOST;
+        $mail->Port = SMTP_PORT;
+        $mail->Mailer = "smtp";
+        $mail->SMTPSecure = 'TLS';
+        $mail->SMTPAuth = true;
+        $mail->Username = SMTP_USERNAME;
+        $mail->Password = SMTP_PASSWORD;
+
+        $mail->setFrom(SMTP_USERNAME, $set_from);
+        $mail->addAddress($to);
+
+        $mail->Subject = $subject;
+        $mail->msgHTML($content);
+        
+        // Send the message
+        $result = false;
+        if ($mail->send()) {
+            $result = true;
         }
+        echo json_decode($result);
+    } catch (phpmailerException $e) {
+        echo $e->errorMessage(); //Pretty error messages from PHPMailer
+    } catch (Exception $e) {
+        echo $e->getMessage(); //Boring error messages from anything else!
     }
-
-    $headers = 'From: ' . $name . '<' . $email . '>' . "\r\n" .
-        'Reply-To: ' . $email . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-
-    // Send the message
-    $send = false;
-    if (mail($mail_to, $subject, $content, $headers))
-    {
-        $send = true;
-    }
-    
-    echo json_encode($send);
 }
