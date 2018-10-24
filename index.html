@@ -522,13 +522,37 @@
         
         <!-- Section - Pricing Start -->
         <section id="pricing" class="bg-cover bg-gray bg-overlay-black-6">
+            <div class="row justify-content-center pb-4 pb-lg-5 wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="2s">
+                <div class="col-lg-6 text-center text-white">
+                    <h3 class="font-alt font-w-600 letter-spacing-2 m-0 mt-1 text-uppercase title-xs-small title-medium">Nos tarifs</h3>
+                    <p class="mt-4 text-xs-large text-extra-large">
+                        Sélectionnez un mois
+                    </p>
+                </div>
+            </div>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-10 col-md-6 col-lg-4 col-xl-4">
+                    <div id="filters-button-group" class="col-10 text-center">
+                        <button type="button" class="btn btn-secondary bg-ba font-w-600 btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off" data-filter=".1mois">
+                            1 mois
+                        </button>
+                        <button type="button" class="btn btn-secondary font-w-600 btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off" data-filter=".3mois">
+                            3 mois
+                        </button>
+                        <button type="button" class="btn btn-secondary font-w-600 btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off" data-filter=".6mois">
+                            6 mois
+                        </button>
+                        <button type="button" class="btn btn-secondary font-w-600 btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off" data-filter=".12mois">
+                            12 mois
+                        </button>
+                    </div>
+                </div>
+                <div class="grid-precios row justify-content-center py-5">
+                    <div class="element-item 1mois col-10 col-md-6 col-lg-4 col-xl-4" data-category="1mois">
                         <div class="pricing bg-white box-shadow-shallow mt-5 mt-md-0 opacity-9-5 rounded text-center">
                             <div class="pricing-header p-3 text-right">
                                 <span class="label label-extra-small bg-base-color-2 font-alt font-w-600 letter-spacing-2 text-extra-small text-uppercase text-white">
-                                    1 mois
+                                    Hebdomadaire
                                 </span>
                             </div>
                             <div class="pricing-body px-5 py-3">
@@ -553,11 +577,65 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-10 col-md-6 col-lg-4 col-xl-4">
+                    <div class="col-10 element-item 1mois col-md-6 col-lg-4 col-xl-4" data-category="1mois">
                         <div class="pricing bg-white box-shadow-shallow mt-5 mt-md-0 opacity-9-5 rounded text-center">
                             <div class="pricing-header p-3 text-right">
                                 <span class="label label-extra-small bg-base-color-2 font-alt font-w-600 letter-spacing-2 text-extra-small text-uppercase text-white">
-                                    3 mois
+                                    Top
+                                </span>
+                            </div>
+                            <div class="pricing-body px-5 py-3">
+                                <h3 class="font-alt title-medium">A partir de</h3>
+                                <span class="d-block mt-3 title-extra-large-4">
+                                    200<span class="pricing-dollar title-large">CHF</span>
+                                </span>
+                                <p class="mt-4 text-large">
+                                   <b>Top</b>
+                                   <br>
+                                   6 entrées par mois 
+                                   <br> 
+                                   24h/24 - 7j/7
+                                </p>
+                            </div>
+                            <div class="pricing-footer bg-base-color mt-4 rounded-bottom">
+                                <a href="#contact" class="pricing-button btn btn-outline-secondary page-scroll font-alt text-small text-white p-3">
+                                    S’inscrire Maintenant
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10 element-item 1mois col-md-6 col-lg-4 col-xl-4" data-category="1mois">
+                        <div class="pricing bg-white box-shadow-shallow mt-5 mt-md-0 opacity-9-5 rounded text-center">
+                            <div class="pricing-header p-3 text-right">
+                                <span class="label label-extra-small bg-base-color-2 font-alt font-w-600 letter-spacing-2 text-extra-small text-uppercase text-white">
+                                    VIP
+                                </span>
+                            </div>
+                            <div class="pricing-body px-5 py-3">
+                                <h3 class="font-alt title-medium">A partir de</h3>
+                                <span class="d-block mt-3 title-extra-large-4">
+                                    200<span class="pricing-dollar title-large">CHF</span>
+                                </span>
+                                <p class="mt-4 text-large">
+                                   <b>Vip</b>
+                                   <br>
+                                   6 entrées par mois 
+                                   <br> 
+                                   24h/24 - 7j/7
+                                </p>
+                            </div>
+                            <div class="pricing-footer bg-base-color mt-4 rounded-bottom">
+                                <a href="#contact" class="pricing-button btn btn-outline-secondary page-scroll font-alt text-small text-white p-3">
+                                    S’inscrire Maintenant
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10 element-item 3mois col-md-6 col-lg-4 col-xl-4" data-category="3mois">
+                        <div class="pricing bg-white box-shadow-shallow mt-5 mt-md-0 opacity-9-5 rounded text-center">
+                            <div class="pricing-header p-3 text-right">
+                                <span class="label label-extra-small bg-base-color-2 font-alt font-w-600 letter-spacing-2 text-extra-small text-uppercase text-white">
+                                    Hebdomadaire
                                 </span>
                             </div>
                             <div class="pricing-body px-5 py-3">
@@ -580,76 +658,62 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-10 element-item 3mois col-md-6 col-lg-4 col-xl-4" data-category="3mois">
+                        <div class="pricing bg-white box-shadow-shallow mt-5 mt-md-0 opacity-9-5 rounded text-center">
+                            <div class="pricing-header p-3 text-right">
+                                <span class="label label-extra-small bg-base-color-2 font-alt font-w-600 letter-spacing-2 text-extra-small text-uppercase text-white">
+                                    Top
+                                </span>
+                            </div>
+                            <div class="pricing-body px-5 py-3">
+                                <h3 class="font-alt title-medium">A partir de</h3>
+                                <span class="d-block mt-3 title-extra-large-4">
+                                    200<span class="pricing-dollar title-large">CHF</span>
+                                </span>
+                                <p class="mt-4 text-large">
+                                   <b>Top</b>
+                                   <br>
+                                   6 entrées par mois 
+                                   <br> 
+                                   24h/24 - 7j/7
+                                </p>
+                            </div>
+                            <div class="pricing-footer bg-base-color mt-4 rounded-bottom">
+                                <a href="#contact" class="pricing-button btn btn-outline-secondary page-scroll font-alt text-small text-white p-3">
+                                    S’inscrire Maintenant
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10 element-item 3mois col-md-6 col-lg-4 col-xl-4" data-category="3mois">
+                        <div class="pricing bg-white box-shadow-shallow mt-5 mt-md-0 opacity-9-5 rounded text-center">
+                            <div class="pricing-header p-3 text-right">
+                                <span class="label label-extra-small bg-base-color-2 font-alt font-w-600 letter-spacing-2 text-extra-small text-uppercase text-white">
+                                    VIP
+                                </span>
+                            </div>
+                            <div class="pricing-body px-5 py-3">
+                                <h3 class="font-alt title-medium">A partir de</h3>
+                                <span class="d-block mt-3 title-extra-large-4">
+                                    200<span class="pricing-dollar title-large">CHF</span>
+                                </span>
+                                <p class="mt-4 text-large">
+                                   <b>VIP</b>
+                                   <br>
+                                   6 entrées par mois 
+                                   <br> 
+                                   24h/24 - 7j/7
+                                </p>
+                            </div>
+                            <div class="pricing-footer bg-base-color mt-4 rounded-bottom">
+                                <a href="#contact" class="pricing-button btn btn-outline-secondary page-scroll font-alt text-small text-white p-3">
+                                    S’inscrire Maintenant
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                </div>
-               <br>
-               <div class="row justify-content-center">
-                    <div class="col-10 col-md-6 col-lg-4 col-xl-4">
-                        <div class="pricing bg-white box-shadow-shallow mt-5 mt-md-0 opacity-9-5 rounded text-center">
-                            <div class="pricing-header p-3 text-right">
-                                <span class="label label-extra-small bg-base-color-2 font-alt font-w-600 letter-spacing-2 text-extra-small text-uppercase text-white">
-                                    6 mois
-                                </span>
-                            </div>
-                            <div class="pricing-body px-5 py-3">
-                                <h3 class="font-alt title-medium">A partir de</h3>
-                            
-                                <span class="d-block mt-3 title-extra-large-4">
-                                    390<span class="pricing-dollar title-large">CHF</span>
-                                </span>
-
-                                <p class="mt-4 text-large">
-                                   <b>Hebdomadaire</b>
-                                   <br>
-                                   6 entrées par mois 
-                                   <br> 
-                                   24h/24 - 7j/7
-                                </p>
-                            </div>
-                            <!-- //.pricing-body -->
-                            
-                            <div class="pricing-footer bg-base-color mt-4 rounded-bottom">
-                                <a href="#contact" class="pricing-button btn btn-outline-secondary page-scroll font-alt text-small text-white p-3">
-                                    S’inscrire Maintenant
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10 col-md-6 col-lg-4 col-xl-4">
-                        <div class="pricing bg-white box-shadow-shallow mt-5 mt-md-0 opacity-9-5 rounded text-center">
-                            <div class="pricing-header p-3 text-right">
-                                <span class="label label-extra-small bg-base-color-2 font-alt font-w-600 letter-spacing-2 text-extra-small text-uppercase text-white">
-                                    12 mois
-                                </span>
-                            </div>
-                            <!-- //.pricing-header -->
-                            
-                            <div class="pricing-body px-5 py-3">
-                                <h3 class="font-alt title-medium">A partir de</h3>
-                            
-                                <span class="d-block mt-3 title-extra-large-4">
-                                    549<span class="pricing-dollar title-large">CHF</span>
-                                </span>
-
-                                <p class="mt-4 text-large">
-                                   <b>Hebdomadaire</b>
-                                   <br>
-                                   6 entrées par mois 
-                                   <br> 
-                                   24h/24 - 7j/7
-                                </p>
-                            </div>
-                            <!-- //.pricing-body -->
-                            
-                            <div class="pricing-footer bg-base-color mt-4 rounded-bottom">
-                                <a href="#contact" class="pricing-button btn btn-outline-secondary page-scroll font-alt text-small text-white p-3">
-                                    S’inscrire Maintenant
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <!--<div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                <!--<div class="col-10 element-item col-md-10 col-lg-10 col-xl-10">
                    <div class="pricing bg-white box-shadow-shallow mt-5 mt-md-0 opacity-9-5 rounded text-center">
                        hola
                    </div>
