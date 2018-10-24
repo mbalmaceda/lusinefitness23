@@ -2,7 +2,6 @@
 * Style
 */
 
-
 /*
 * Google font
 */
@@ -15,31 +14,38 @@
 */
 
 /** BG Image */
-
 #home {
-    background-image: url("../images/home/home1.png");
+    background-color: #7E7E7E;
 }
 
 /** BG Parallax */
-
 #home-bg-parallax > .bg-parallax {
     background: url("../images/bg-parallax.jpg");
 }
 
 /** BG Slider */
-
-#home-bg-slider .flickity-slider > .carousel-cell:nth-child(1) {
-    background: url("../images/bg-home-1.jpg");
+#home .flickity-slider > .carousel-cell:nth-child(1) {
+    background: url("../images/home/home1.png");
 }
-#home-bg-slider .flickity-slider > .carousel-cell:nth-child(2) {
+#home .flickity-slider > .carousel-cell:nth-child(2) {
+    background: url("../images/home/home2.png");
+}
+#home .flickity-slider > .carousel-cell:nth-child(3) {
+    background: url("../images/home/home3.jpg");
+}
+
+/** BG Slideshow */
+#home-bg-slideshow .slides > .bg-cover:nth-child(1) {
+    background-color: #7E7E7E;
+}
+#home-bg-slideshow .slides > .bg-cover:nth-child(2) {
     background: url("../images/bg-home-2.jpg");
 }
-#home-bg-slider .flickity-slider > .carousel-cell:nth-child(3) {
+#home-bg-slideshow .slides > .bg-cover:nth-child(3) {
     background: url("../images/bg-home-3.jpg");
 }
 
 /** BG Video */
-
 #home-bg-video .player:before {
     z-index: 15;
 }
@@ -60,6 +66,10 @@
     background-image: url("../images/bg-benefits.jpg");
 }
 
+#nosavantages {
+    background-image: url("../images/background/bg-nos_avantages.png");
+}
+
 
 /*
 * Section - Milestones
@@ -78,13 +88,48 @@
     background-image: url("../images/background/bg-lasalle-1.png");
 }
 
+/*#courscollectifs {
+    background-image: url("../images/background/bg-random-2.png");
+}*/
 
+/*
+* Section - Contact
+*/
+
+.contact-card {
+    opacity: 0.98;
+    min-height: 140px;
+}
+.contact-card img {
+    left: 0;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 15;
+}
+.contact-card-block {
+    left: 0;
+    padding: 0 30px 0 175px;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+}
+@media (max-width: 575px) {
+    .contact-card img {
+        display: none;
+    }
+    .contact-card-block {
+        padding: 0 30px;
+    }
+}
+
+.lf23{
+    color: #C52B0A;
+}
 /*
 * Footer
 */
-#contact {
-    background-image: url("../images/bg-contact.jpg");
-}
+
 .footer-logo {
     max-height: 40px;
 }
@@ -93,35 +138,16 @@
     position: relative;
 }
 
+.scrollspy-example{
+    height: 330px;
+    overflow: auto;
+    position: relative;
+}
+.scrollspy-example > div {
+    width: 95%;
+    margin: 5px;
+}
 #tblNT{
     display: inline-table !important;
 }
-
-.text-center{
-    text-align: center;
-}
-
-#lasalle{
-    padding-bottom: 70px !important;
-}
-
-#courscollectifs{
-    padding-top: 70px !important;
-}
-.closeOffer{
-    position: absolute;
-    top: 6px;
-    left: 18px;
-}
-
-.modal-content-offer{
-    width: 100%;
-    height: 100%;
-    min-height: 100px;
-    position: relative;
-}
-
-.summer_schedule{
-    max-width: 543px;
-    width: 100%;
-}
+.hola{height: 200px}

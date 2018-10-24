@@ -4,7 +4,7 @@ require 'PHPMailer/extras/Security.php';
 
 define('SMTP_HOST', 'asmtp.mail.hostpoint.ch'); // Hostname of the mail server
 define('SMTP_USERNAME', 'no-reply@lusinefitness23.ch'); // Username for SMTP authentication any valid email created in your domain
-define('SMTP_PASSWORD', 'UjskUbaE'); // Password for SMTP authentication
+define('SMTP_PASSWORD', 'DGKeuCfw'); // Password for SMTP authentication
 define('SMTP_PORT', 587); // Port of the SMTP like to be 25, 80, 465 or 587
 
 // To address who will receive this email 
@@ -23,11 +23,11 @@ if (isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['message']
     
     // Prefedined Variables  
     $set_from = 'Lusine Fitness 23 Notification Mailer';
-    $subject = 'Lusine Fitness 23: message de ' . $name . '!';
+    $subject = 'Message de ' . $name . '!';
 
     // Collecting all content in HTML Table
     $content = '<table width="100%">
-    <tr><td colspan="2"><strong>Contact Details:</strong></td></tr>
+    <tr><td colspan="2"><strong>Détails du contact:</strong></td></tr>
     <tr><td valign="top">Nom:</td><td>' . $name . '</td></tr>
     <tr><td valign="top">Email:</td><td>' . $email . '</td></tr>
     <tr><td valign="top">Sujet:</td><td>' . $services. '</td></tr>
