@@ -64,19 +64,16 @@
 
         // init Isotope
         var $grid = $('.grid-precios').isotope({
-          itemSelector: '.element-item',
-          layoutMode: 'fitRows'
+            itemSelector: '.element-item',
+            layoutMode: 'fitRows'
         });
 
         $grid.isotope({ filter: '.1mois' });
         
         // filter items on button click
         $('#filters-button-group').on( 'click', 'button', function() {
-            $grid.isotope('shuffle');
             var filterValue = $(this).attr('data-filter');
             var elems = $grid.isotope('getItemElements');
-            console.log(filterValue);
-            console.log(elems);
             $grid.isotope({ filter: filterValue });
         });
 
