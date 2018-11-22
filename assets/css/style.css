@@ -157,6 +157,10 @@
   background-color: #343a40;
 }
 
+#filters-button-group .btn {
+    margin: 10px;
+}
+
 #filters-button-group>.btn.is-checked {
   color: white;
   text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);

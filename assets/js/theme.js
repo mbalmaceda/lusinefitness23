@@ -68,7 +68,7 @@
             layoutMode: 'fitRows'
         });
 
-        $grid.isotope({ filter: '.1mois' });
+        $grid.isotope({ filter: '.12mois' });
         
         // filter items on button click
         $('#filters-button-group').on( 'click', 'button', function() {
