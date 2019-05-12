@@ -94,10 +94,10 @@
 
 /** BG Slider */
 #home .flickity-slider > .carousel-cell:nth-child(1) {
-    background: url("../images/home/home1.png");
+    background: url("../images/home/home1.jpg");
 }
 #home .flickity-slider > .carousel-cell:nth-child(2) {
-    background: url("../images/home/home2.png");
+    background: url("../images/home/home2.jpg");
 }
 #home .flickity-slider > .carousel-cell:nth-child(3) {
     background: url("../images/home/home3.jpg");
@@ -136,7 +136,7 @@
 }
 
 #nosavantages {
-    background-image: url("../images/background/bg-nos_avantages.png");
+    background-image: url("../images/background/bg-nos_avantages.jpg");
 }
 
 
@@ -154,7 +154,7 @@
 */
 
 #pricing {
-    background-image: url("../images/background/bg-lasalle-1.png");
+    background-image: url("../images/background/bg-lasalle-1.jpg");
 }
 
 /*#courscollectifs {
