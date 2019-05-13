@@ -94,24 +94,16 @@
 
 /** BG Slider */
 #home .flickity-slider > .carousel-cell:nth-child(1) {
-    background: url("../images/home/home1.jpg");
+    background: url("../images/home/home_v1.jpg");
 }
 #home .flickity-slider > .carousel-cell:nth-child(2) {
-    background: url("../images/home/home2.jpg");
+    background: url("../images/home/home_v2.jpg");
 }
 #home .flickity-slider > .carousel-cell:nth-child(3) {
-    background: url("../images/home/home3.jpg");
+    background: url("../images/home/home_v3.jpg");
 }
-
-/** BG Slideshow */
-#home-bg-slideshow .slides > .bg-cover:nth-child(1) {
-    background-color: #7E7E7E;
-}
-#home-bg-slideshow .slides > .bg-cover:nth-child(2) {
-    background: url("../images/bg-home-2.jpg");
-}
-#home-bg-slideshow .slides > .bg-cover:nth-child(3) {
-    background: url("../images/bg-home-3.jpg");
+#home .flickity-slider > .carousel-cell:nth-child(4) {
+    background: url("../images/home/home_v4.jpg");
 }
 
 /** BG Video */
