@@ -4,7 +4,7 @@ require 'PHPMailer/extras/Security.php';
 
 define('SMTP_HOST', 'asmtp.mail.hostpoint.ch'); // Hostname of the mail server
 define('SMTP_USERNAME', 'no-reply@lusinefitness23.ch'); // Username for SMTP authentication any valid email created in your domain
-define('SMTP_PASSWORD', 'DGKeuCfw'); // Password for SMTP authentication
+define('SMTP_PASSWORD', 'nxx8BjG4'); // Password for SMTP authentication
 define('SMTP_PORT', 587); // Port of the SMTP like to be 25, 80, 465 or 587
 
 // To address who will receive this email 
