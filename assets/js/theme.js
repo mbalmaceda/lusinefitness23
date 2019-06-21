@@ -394,7 +394,7 @@
                 dataType: 'json',
                 data: $form.serialize(),
                 success: function(data){
-                    if (data === true){
+                    if (data === 1){
                         $btnForm.html(okMessage);
                         $form.find('input[type="text"], input[type="email"], textarea').val('');
                     }
