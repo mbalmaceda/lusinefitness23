@@ -371,16 +371,25 @@
         var $contactForm = $('#form-contact'),
             $btnContactForm = $('#btn-form-contact');
         
-        $btnContactForm.on('click', function(e){
+        // $btnContactForm.on('click', function(e){
+            
+        //     e.preventDefault();
+        // });
+
+        $contactForm.submit(function (){
+            event.preventDefault();
             $contactForm.validate();
             if ($contactForm.valid()){
-                send_mail($contactForm, $btnContactForm);
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfrkakUAAAAAHr04xFcTwGIPVKNHUhAAtksj39n', { action: 'contact' }).then(function(token) {
+                        send_mail($contactForm, $btnContactForm, token);
+                    });
+                });
             }
-            e.preventDefault();
         });
         
         // Send mail
-        function send_mail($form, $btnForm){
+        function send_mail($form, $btnForm, token){
             var defaultMessage = $btnForm.html(),
                 sendingMessage = 'Chargement...',
                 errorMessage = 'Envoi d\'erreur!',
@@ -392,7 +401,13 @@
                 url: $form.attr('action'),
                 type: 'post',
                 dataType: 'json',
-                data: $form.serialize(),
+                data: {
+                    'name' : $form.find('input[name="name"]').val(),
+                    'email' : $form.find('input[name="email"]').val(),
+                    'subject' : $form.find('input[name="subject"]').val(),
+                    'message' : $form.find('textarea').val(),
+                    'token' : token
+                },
                 success: function(data){
                     if (data === 1){
                         $btnForm.html(okMessage);
