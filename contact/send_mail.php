@@ -46,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
             try {
                 $mail = new PHPMailer();
                 $mail->isSMTP();
-                // $mail->SMTPDebug = 2;
                 $mail->Host = SMTP_HOST;
                 $mail->Port = SMTP_PORT;
                 $mail->Mailer = "smtp";
@@ -54,6 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
                 $mail->SMTPAuth = true;
                 $mail->Username = SMTP_USERNAME;
                 $mail->Password = SMTP_PASSWORD;
+                $mail->CharSet = 'UTF-8';
+                $mail->Encoding = 'base64';
 
                 $mail->setFrom(SMTP_USERNAME, $set_from);
                 $mail->addAddress($to);
