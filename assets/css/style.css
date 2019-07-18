@@ -250,3 +250,32 @@
   text-shadow: 2px 2px 5px #d29b09;
   top: 0;
 }
+
+.modal, body.modal-open {
+    padding-right: 0 !important;
+}
+
+body.modal-open {
+    overflow: auto;
+}
+
+body.scrollable {
+    overflow-y: auto;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.modal-footer .btn {
+    position: absolute;
+    right: 10px;
+}
+
+.btn-close-modal{
+    position: absolute;
+    left: 97%;
+    top: 1%;
+    color: #FFF;
+}
