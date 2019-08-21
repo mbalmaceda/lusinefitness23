@@ -59,7 +59,7 @@
     */
    
     $document.ready(function(){
-        $('#modalIMG').modal('show');
+        //$('#modalIMG').modal('show');
         /*Incializacion de wow */
         new WOW().init();
 
