@@ -4,7 +4,7 @@ require 'PHPMailer/extras/Security.php';
 
 define('SMTP_HOST', 'asmtp.mail.hostpoint.ch');
 define('SMTP_USERNAME', 'no-reply@lusinefitness23.ch');
-define('SMTP_PASSWORD', 'FYnYtAQb');
+define('SMTP_PASSWORD', 'kYe6fDKS');
 define('SMTP_PORT', 587);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
