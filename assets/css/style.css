@@ -106,6 +106,20 @@
     background: url("../images/home/home_v4.jpg");
 }
 
+/** BG Slider Orbes*/
+#home .flickity-slider > .orbes-cell:nth-child(1) {
+    background: url("../images/home/home_v5.jpg");
+}
+#home .flickity-slider > .orbes-cell:nth-child(2) {
+    background: url("../images/home/home_v2.jpg");
+}
+#home .flickity-slider > .orbes-cell:nth-child(3) {
+    background: url("../images/home/home_v3.jpg");
+}
+#home .flickity-slider > .orbes-cell:nth-child(4) {
+    background: url("../images/home/home_v4.jpg");
+}
+
 /** BG Video */
 #home-bg-video .player:before {
     z-index: 15;
@@ -279,3 +293,91 @@ body.scrollable {
     top: 1%;
     color: #FFF;
 }
+
+.body-card {
+    position: relative;
+}
+
+.destacade {
+    font-size: 1.2rem;
+}
+
+.wrap {
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 100%;
+    height: 188px;
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    overflow: hidden;
+}
+.wrap:before, .wrap:after {
+    content: ""; 
+    position: absolute;
+}
+.wrap:before {
+    width: 40px;
+    height: 8px;
+    right: 100px;
+    background: cadetblue;
+    border-radius: 8px 8px 0px 0px;
+}
+.wrap:after {
+    width: 8px;
+    height: 40px;
+    right: 0px;
+    top: 100px;
+    background: cadetblue;
+    border-radius: 0px 8px 8px 0px;
+}
+.ribbon6 {
+    color: white;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    top: 30px;
+    right: -50px;
+    z-index: 2;
+    overflow: hidden;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: 1px dashed;
+    box-shadow:0 0 0 3px #00B3ED,  0px 21px 5px -18px rgba(0,0,0,0.6);
+    background: #00B3ED;
+    text-align: center;
+}
+
+.ribbon4 {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 2;
+  position: absolute;
+  top: 15px;
+  padding: 8px 10px;
+  background: #EDBA19;
+  box-shadow: -1px 2px 3px rgba(0,0,0,.3);
+}
+.ribbon4:before, .ribbon4:after {
+  content: "";
+  position: absolute;
+}
+.ribbon4:before {
+  width: 7px;
+  height: 40px;
+  top: 0;
+  left: -6.5px;
+  padding: 0 0 7px;
+  background: inherit;
+  border-radius: 5px 0 0 5px;
+}
+.ribbon4:after {
+  width: 5px;
+  height: 5px;
+  bottom: -5px;
+  left: -4.5px;
+  background: lightblue;
+  border-radius: 5px 0 0 5px;
+ }
