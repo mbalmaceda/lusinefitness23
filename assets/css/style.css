@@ -290,7 +290,11 @@ body.scrollable {
 }
 
 .destacade {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    color:white;
+    font-weight: bold;
+    background-color: #ff5406;
+    border-radius: 5px;
 }
 
 .wrap {
@@ -372,3 +376,11 @@ body.scrollable {
   background: lightblue;
   border-radius: 5px 0 0 5px;
  }
+
+.cross {
+    display: inline-block;
+    text-decoration: line-through;
+}
+.price-obsolete {
+    color:#999;
+}
