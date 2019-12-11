@@ -285,6 +285,7 @@
                     'email' : $form.find('input[name="email"]').val(),
                     'subject' : $form.find('input[name="subject"]').val(),
                     'message' : $form.find('textarea').val(),
+                    'location' : $form.find('input[name="location"]').val(),
                     'token' : token
                 },
                 success: function(data){

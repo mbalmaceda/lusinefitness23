@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
             $email = $security->xss_clean($_POST['email']);
             $services = $security->xss_clean($_POST['subject']);
             $message = $security->xss_clean($_POST['message']);
+            $location = $security->xss_clean($_POST['location']);
             
             // Prefedined Variables  
             $set_from = 'Lusine Fitness 23 Notification Mailer';
@@ -40,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
             <tr><td valign="top">Nom:</td><td>' . $name . '</td></tr>
             <tr><td valign="top">Email:</td><td>' . $email . '</td></tr>
             <tr><td valign="top">Sujet:</td><td>' . $services. '</td></tr>
+            <tr><td valign="top">Emplacement:</td><td>' . $location. '</td></tr>
             <tr><td valign="top">Message:</td><td>' . $message . '</td></tr>
             </table> ';
 
@@ -55,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
                 $mail->Password = SMTP_PASSWORD;
                 $mail->CharSet = 'UTF-8';
                 $mail->Encoding = 'base64';
+                // $mail->SMTPDebug = 2;
 
                 $mail->setFrom(SMTP_USERNAME, $set_from);
                 $mail->addAddress($to);
