@@ -106,6 +106,10 @@
     color: #7E7E7E !important;
 }
 
+.text-base-color-2 {
+    color: #C52B0A !important;
+}
+
 .list-group-item.active{
     z-index: 2;
     color: #fff;
