@@ -403,3 +403,43 @@ body.scrollable {
 .price-obsolete {
     color:#999;
 }
+
+.pricing-header {
+    width: 100%;
+    border-radius: 0 !important;
+    font-size: 20px;
+}
+
+.check-tarifs {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.benefits {
+    text-align: justify;
+}
+
+.pricing-body {
+    font-family: 'Montserrat';
+}
+
+.triangule {
+    margin-left: 150px;
+    margin-top: -35px;
+    width: 0;
+    height: 0;
+    border-right: 25px solid transparent;
+    border-top: 25px solid transparent;
+    border-left: 25px solid #C52B0A;
+    border-bottom: 25px solid #C52B0A;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+}
+
+.btn-pricing-success {
+    background-color: #52b86a;
+}
+
+.btn-pricing-success:hover {
+    background-color: #088A29;
+}
