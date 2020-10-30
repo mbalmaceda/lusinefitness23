@@ -415,6 +415,18 @@ body.scrollable {
     margin-right: 10px;
 }
 
+.ghost-line {
+    height: 24px;
+}
+
+.subline {
+    margin-left: 30px;
+}
+
+.center-last-line {
+    text-align-last: center;
+}
+
 .benefits {
     text-align: justify;
 }
