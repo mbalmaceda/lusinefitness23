@@ -423,12 +423,14 @@ body.scrollable {
     margin-left: 30px;
 }
 
-.center-last-line {
-    text-align-last: center;
+@media (min-width: 992px) {
+    .center-last-line {
+        text-align-last: center;
+    }
 }
 
 .benefits {
-    text-align: justify;
+    text-align: left;
 }
 
 .pricing-body {
@@ -436,7 +438,7 @@ body.scrollable {
 }
 
 .triangule {
-    margin-left: 150px;
+    margin-left: calc(50% - 25px);
     margin-top: -35px;
     width: 0;
     height: 0;
