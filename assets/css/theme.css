@@ -1606,7 +1606,7 @@ label.error {
 */
 
 section {
-    padding: 40px 0px;
+    padding: 80px 0px;
 }
 
 
@@ -2637,12 +2637,12 @@ section {
 
 @media (min-width: 768px) {
     section {
-        padding: 40px 0;
+        padding: 110px 0;
     }
 }
 @media (min-width: 992px) {
     section {
-        padding: 40px 0;
+        padding: 140px 0;
     }
 }
 
