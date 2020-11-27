@@ -1,10 +1,9 @@
 $(document).ready(function() {
     swal.fire({
-        title: '<strong><u>Info Corona</u></strong>',
+        title: '<h1><strong><u>Info</u></strong><h1>',
         icon: 'info',
         html:
-          'Les nouveaux et anciens abonnements sont automatiquement prolongé en cas, ' +
-          '<b>confinement du aux COVID</b> (pas le delais de resiliation)',
+          '<h2>Ouvert depuis le 19.2020</h2>',
         showCloseButton: true,
         focusConfirm: true,
         confirmButtonText:
