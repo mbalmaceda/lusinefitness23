@@ -3,7 +3,7 @@ $(document).ready(function() {
         title: '<h1><strong><u>Info</u></strong><h1>',
         icon: 'info',
         html:
-          '<h2>Ouvert depuis le 19.2020</h2>',
+          '<h3>Merci de nous suivre sur nos réseaux sociaux pour suivre toutes les dernières informations concernant la réouverture des fitness</h3>',
         showCloseButton: true,
         focusConfirm: true,
         confirmButtonText:
