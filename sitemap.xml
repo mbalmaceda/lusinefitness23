@@ -4,10 +4,24 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 
 <url>
-  <loc>http://www.lusinefitness23.ch/</loc>
-  <lastmod>2017-10-08T17:28:27+00:00</lastmod>
+  <loc>https://lusinefitness23.ch/</loc>
+  <lastmod>2020-11-27T01:08:54+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
+<url>
+  <loc>https://lusinefitness23.ch/orbe.html</loc>
+  <lastmod>2020-11-30T03:00:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lusinefitness23.ch/avenches.html</loc>
+  <lastmod>2020-11-30T03:00:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>
