@@ -110,25 +110,6 @@
 #home .flickity-slider > .orbes-cell:nth-child(1) {
     background: url("../images/orbe/home/home_1.1.jpg");
 }
-#home .flickity-slider > .orbes-cell:nth-child(2) {
-    background: url("../images/orbe/home/home_2.1.jpg");
-}
-
-#home .flickity-slider > .orbes-cell:nth-child(3) {
-    background: url("../images/orbe/home/home_3.1.jpg");
-}
-
-#home .flickity-slider > .orbes-cell:nth-child(4) {
-    background: url("../images/orbe/home/home_4.1.jpg");
-}
-
-#home .flickity-slider > .orbes-cell:nth-child(5) {
-    background: url("../images/orbe/home/home_5.1.jpg");
-}
-
-#home .flickity-slider > .orbes-cell:nth-child(6) {
-    background: url("../images/orbe/home/home_6.1.jpg");
-}
 
 /** BG Video */
 #home-bg-video .player:before {
