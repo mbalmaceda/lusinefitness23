@@ -96,15 +96,6 @@
 #home .flickity-slider > .carousel-cell:nth-child(1) {
     background: url("../images/home/home_v1.jpg");
 }
-#home .flickity-slider > .carousel-cell:nth-child(2) {
-    background: url("../images/home/home_v2.jpg");
-}
-#home .flickity-slider > .carousel-cell:nth-child(3) {
-    background: url("../images/home/home_v3.jpg");
-}
-#home .flickity-slider > .carousel-cell:nth-child(4) {
-    background: url("../images/home/home_v4.jpg");
-}
 
 /** BG Slider Orbes*/
 #home .flickity-slider > .orbes-cell:nth-child(1) {
