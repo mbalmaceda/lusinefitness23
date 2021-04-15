@@ -212,6 +212,63 @@
                 e.preventDefault();
             });
         }
+
+        /** Gallery */
+        if ($.fn.imagesLoaded && $.fn.isotope){
+            $galleryGrid.imagesLoaded(function(){
+                $galleryGrid.isotope({
+                    itemSelector: '.item',
+                    layoutMode: 'masonry'
+                });
+            });
+        }
+        
+        
+        /** Gallery - Magnific popup */
+        if ($.fn.magnificPopup){
+            $galleryGrid.magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                mainClass: 'mfp-fade',
+                gallery:{
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0,2],
+                    tPrev: 'Previous',
+                    tNext: 'Next',
+                    tCounter: '<span class="mfp-counter-curr">%curr%</span> sur <span class="mfp-counter-total">%total%</span>'
+                }
+            });
+            
+            var $popupTrigger = $('.popup-trigger'),
+                $popupTriggerClose = $('.popup-trigger-close');
+        
+            $popupTrigger.on('click', function(e){
+                $.magnificPopup.open({
+                    items: {
+                        src: $(this).closest('.popup-container').find('.popup-content')
+                    },
+                    type: 'inline',
+                    fixedContentPos: true,
+                    closeOnContentClick: false,
+                    callbacks: {
+                        open: function () {
+                            $('.mfp-wrap').addClass('popup-wrap');
+                        },
+                        close: function () {
+                            $('.mfp-wrap').removeClass('popup-wrap');
+                        }
+                    }
+                });
+                
+                e.preventDefault();
+            });
+            
+            $popupTriggerClose.on('click', function(e){
+                $.magnificPopup.close();
+                e.preventDefault();
+            });
+        }
         
         /** BG Parallax */
         if (typeof ScrollMagic !== 'undefined'){
