@@ -102,6 +102,11 @@
     background: url("../images/orbe/home/home_1.1.jpg");
 }
 
+/** BG Slider St-Blaise*/
+#home .flickity-slider > .orbes-cell:nth-child(1) {
+    background: url("../images/st-blaise/home/home-st-blaise-2.jpg");
+}
+
 /** BG Video */
 #home-bg-video .player:before {
     z-index: 15;
