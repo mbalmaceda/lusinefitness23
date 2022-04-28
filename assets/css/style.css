@@ -24,7 +24,7 @@
         width:100%; 
         z-index:2; 
         top:27%;
-        right: 10%;
+        right: 3%;
         text-align: right;
         font-size: 1rem !important;
     }
@@ -37,7 +37,7 @@
         width:100%; 
         z-index:2; 
         top:27%;
-        right: 10%;
+        right: 3%;
         text-align: right; 
     }
 }
@@ -49,7 +49,7 @@
         width:100%; 
         z-index:2; 
         top:27%;
-        right: 10%;
+        right: 5%;
         text-align: right;
     }
 }
@@ -103,8 +103,8 @@
 }
 
 /** BG Slider St-Blaise*/
-#home .flickity-slider > .orbes-cell:nth-child(1) {
-    background: url("../images/st-blaise/home/home-st-blaise-2.jpg");
+#home .flickity-slider > .st-blaise-cell:nth-child(1) {
+    background: url("../images/st-blaise/home/home-st-blaise-3.jpg");
 }
 
 /** BG Video */
