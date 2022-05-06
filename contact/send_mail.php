@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
     if ($recaptcha->score >= 0.5) {
         if (isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['message']))
         { 
-            $to = 'contact@lusinefitness23.ch';
             $security = new Security();
 
             $name = $security->xss_clean($_POST['name']);
@@ -30,10 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
             $services = $security->xss_clean($_POST['subject']);
             $message = $security->xss_clean($_POST['message']);
             $location = $security->xss_clean($_POST['location']);
+            $pathname = $security->xss_clean($_POST['pathname']);
             
             // Prefedined Variables  
             $set_from = 'Lusine Fitness 23 Notification Mailer';
             $subject = 'Message de ' . $name . '!';
+            $to = 'contact@'. $pathname .'lusinefitness23.ch';
 
             // Collecting all content in HTML Table
             $content = '<table width="100%">
@@ -57,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
                 $mail->Password = SMTP_PASSWORD;
                 $mail->CharSet = 'UTF-8';
                 $mail->Encoding = 'base64';
-                // $mail->SMTPDebug = 2;
+                $mail->SMTPDebug = 2;
 
                 $mail->setFrom(SMTP_USERNAME, $set_from);
                 $mail->addAddress($to);
@@ -70,7 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
                 if ($mail->send()) {
                     $result = true;
                 }
-                echo json_decode($result);
+                // echo json_decode($result);
+                echo $to;
             } catch (phpmailerException $e) {
                 echo $e->errorMessage(); //Pretty error messages from PHPMailer
             } catch (Exception $e) {
@@ -81,5 +83,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
         echo json_decode(['error' => 'Debes verificar tu identidad']);
     }
 
-} 
+}
 ?>
