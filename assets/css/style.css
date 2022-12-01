@@ -28,6 +28,10 @@
         text-align: right;
         font-size: 1rem !important;
     }
+
+    .ribbon6 {
+        top: 66px !important;
+    }
 }
 
 /*Small devices  - landscapes phones */
@@ -40,6 +44,10 @@
         right: 3%;
         text-align: right; 
     }
+
+    .ribbon6 {
+        top: 66px !important;
+    }
 }
 
 /*Medium devices - tablets IPAD*/
@@ -51,6 +59,10 @@
         top:27%;
         right: 5%;
         text-align: right;
+    }
+
+    .ribbon6 {
+        top: 66px;
     }
 }
 
@@ -324,18 +336,18 @@ body.scrollable {
 }
 .ribbon6 {
     color: white;
-    width: 200px;
+    width: 134px;
     height: 40px;
     line-height: 40px;
     position: absolute;
-    top: 30px;
-    right: -50px;
+    top: 24px;
+    right: -9px;
     z-index: 2;
     overflow: hidden;
     -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+    transform: rotate(35deg);
     border: 1px dashed;
-    box-shadow:0 0 0 3px #00B3ED,  0px 21px 5px -18px rgba(0,0,0,0.6);
+    box-shadow: 0 0 0 3px #00b3ed, 0px 21px 5px -18px rgb(0 0 0 / 60%);
     background: #00B3ED;
     text-align: center;
 }
