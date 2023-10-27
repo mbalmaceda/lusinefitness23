@@ -1,10 +1,15 @@
 <?php
-require 'PHPMailer/PHPMailerAutoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 require 'PHPMailer/extras/Security.php';
 
 define('SMTP_HOST', 'asmtp.mail.hostpoint.ch');
 define('SMTP_USERNAME', 'no-reply@lusinefitness23.ch');
-define('SMTP_PASSWORD', 'kYe6fDKS');
+define('SMTP_PASSWORD', 'V581O3eKOrwbo%+-');
 define('SMTP_PORT', 587);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
@@ -29,12 +34,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
             $services = $security->xss_clean($_POST['subject']);
             $message = $security->xss_clean($_POST['message']);
             $location = $security->xss_clean($_POST['location']);
-            $pathname = $security->xss_clean($_POST['pathname']);
+            $pathname = '';
+
+            if($location != 'Avenches') {
+                $pathname = $location.'.';
+            }
             
             // Prefedined Variables  
             $set_from = 'Lusine Fitness 23 Notification Mailer';
             $subject = 'Message de ' . $name . '!';
-            $to = 'contact@'. $pathname .'lusinefitness23.ch';
+            $to = 'contact@'. strtolower($pathname) .'lusinefitness23.ch';
 
             // Collecting all content in HTML Table
             $content = '<table width="100%">
@@ -58,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
                 $mail->Password = SMTP_PASSWORD;
                 $mail->CharSet = 'UTF-8';
                 $mail->Encoding = 'base64';
-                $mail->SMTPDebug = 2;
+                //$mail->SMTPDebug = 2;
 
                 $mail->setFrom(SMTP_USERNAME, $set_from);
                 $mail->addAddress($to);
@@ -70,9 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
                 $result = false;
                 if ($mail->send()) {
                     $result = true;
+                    echo json_decode($result);
                 }
-                // echo json_decode($result);
-                echo $to;
             } catch (phpmailerException $e) {
                 echo $e->errorMessage(); //Pretty error messages from PHPMailer
             } catch (Exception $e) {
@@ -82,6 +90,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
     } else {
         echo json_decode(['error' => 'Debes verificar tu identidad']);
     }
-
 }
 ?>

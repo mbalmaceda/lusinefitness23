@@ -343,7 +343,6 @@
                     'subject' : $form.find('input[name="subject"]').val(),
                     'message' : $form.find('textarea').val(),
                     'location' : $form.find('input[name="location"]').val(),
-                    'pathname': pathname(),
                     'token' : token
                 },
                 success: function(data){
@@ -367,15 +366,6 @@
                     }, 3000);
                 }
             });
-        }
-
-        function pathname(){
-            var nombre = window.location.pathname.split("/")[2].split("html")[0];
-            if(nombre == "avenches") {
-                return ""
-            } else {
-                return nombre
-            }
         }
 
         $('.customer-logos').slick({
