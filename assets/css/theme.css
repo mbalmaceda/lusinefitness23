@@ -1725,6 +1725,13 @@ section {
 .text-red {
     color: #ef494d !important;
 }
+.text-red-lusine {
+    color: #C52B0A !important;
+}
+
+.swal2-popup {
+    border: 7px solid #C52B0A !important;
+}
 
 
 /*
